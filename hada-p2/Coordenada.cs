@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hada
 {
-    internal class Program
+    internal class Coordenada
     {
-        static void Main(string[] args)
-        {
-        }
     }
 }

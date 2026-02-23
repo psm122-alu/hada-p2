@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hada
 {
-    internal class Program
+    internal class Tablero
     {
-        static void Main(string[] args)
-        {
-        }
     }
 }
