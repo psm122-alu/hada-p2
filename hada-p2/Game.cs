@@ -33,7 +33,7 @@ namespace Hada
             while (!finPartida)
             {
                 Console.WriteLine(tablero.ToString());
-                Console.WriteLine("Introduce la coordenada a disparar ('s' o 'S' para salir):");
+                Console.WriteLine("Introduce la coordenada a disparar (formato: FILA,COLUMNA) ('s' o 'S' para salir):");
 
                 string entrada = Console.ReadLine();
 
@@ -47,13 +47,19 @@ namespace Hada
 
                 if (partes.Length == 2)
                 {
-                    Coordenada coordenadaDisparo = new Coordenada(partes[0], partes[1]);
-                    tablero.Disparar(coordenadaDisparo);
-
+                    try
+                    {
+                        Coordenada coordenadaDisparo = new Coordenada(partes[0], partes[1]);
+                        tablero.Disparar(coordenadaDisparo);
+                    }
+                    catch(Exception)
+                    {
+                        Console.WriteLine("Formato introducido incorrecto (formato: FILA,COLUMNA)");
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("Formato introducido incorrecto, porfavor introduce otra vez la coordenada");
+                    Console.WriteLine("Formato introducido incorrecto (formato: FILA,COLUMNA)");
                 }
             }
         }
